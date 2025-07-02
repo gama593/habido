@@ -1,0 +1,14 @@
+workflows:
+  build_debug_apk:
+    name: Build Debug APK from ZIP
+    max_build_duration: 15
+    environment:
+      flutter: stable
+    scripts:
+      - echo "Unzipping project..."
+      - unzip FocusFlowFullApp.zip -d extracted
+      - cd extracted/FocusFlowFullApp
+      - flutter pub get
+      - flutter build apk --debug
+    artifacts:
+      - extracted/FocusFlowFullApp/build/app/outputs/flutter-apk/app-debug.apk
