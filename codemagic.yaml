@@ -6,9 +6,9 @@ workflows:
       flutter: stable
     scripts:
       - echo "Unzipping project..."
-      - unzip FocusFlowFullApp.zip -d extracted
-      - cd extracted/FocusFlowFullApp
+      - unzip FocusFlowFullApp.zip
+      - cd FocusFlowFullApp
       - flutter pub get
       - flutter build apk --debug
     artifacts:
-      - extracted/FocusFlowFullApp/build/app/outputs/flutter-apk/app-debug.apk
+      - FocusFlowFullApp/build/app/outputs/flutter-apk/app-debug.apk
